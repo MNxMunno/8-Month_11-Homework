@@ -1,6 +1,16 @@
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import Btn from "../../static/btn/Btn";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "../../static/banner/styles.css";
+
+// import required modules
+import { Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Catalog = () => {
   const data = [
@@ -37,18 +47,20 @@ const Catalog = () => {
   ];
 
   const card = data?.map((el) => (
-    <div key={el.id} className="card">
-      <div className="texts">
-        <h3>{el.title}</h3>
-        <a href="#">
-          От 540₽
-          <FaArrowRightLong />
-        </a>
+    <SwiperSlide key={el.id} className="slide">
+      <div className="card">
+        <div className="texts">
+          <h3>{el.title}</h3>
+          <a href="#">
+            От 540₽
+            <FaArrowRightLong />
+          </a>
+        </div>
+        <div className="img">
+          <img src={el.img} alt={el.title} />
+        </div>{" "}
       </div>
-      <div className="img">
-        <img src={el.img} alt={el.title} />
-      </div>{" "}
-    </div>
+    </SwiperSlide>
   ));
   return (
     <section className="catalog">
@@ -56,11 +68,22 @@ const Catalog = () => {
         <div className="content">
           <div className="title">
             <h1>Каталог</h1>
-            <a href="#">
-              Весь каталог <FaArrowRightLong />
-            </a>
+            <Btn text={" Весь каталог "} />
           </div>
           <div className="cards">{card}</div>
+          <Swiper
+            slidesPerView={2}
+            spaceBetween={30}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={false}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {card}
+          </Swiper>
         </div>
       </div>
     </section>

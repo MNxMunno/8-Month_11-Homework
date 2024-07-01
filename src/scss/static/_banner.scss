@@ -46,30 +46,8 @@
   @media only screen and (max-width: 585px) {
     .content {
       padding: 40px 20px;
-      h1 {
-        max-width: 200px;
-        font-size: 24px;
-        line-height: 32px;
-      }
-      img {
-        width: 150px;
-      }
-    }
-  }
-  @media only screen and (max-width: 464px) {
-    .mySwiper {
-      .content {
-        padding: 40px 20px;
-        gap: 5px;
-        h1 {
-          max-width: 160px;
-          font-size: 18px;
-          line-height: 24px;
-        }
-        img {
-          width: 110px;
-        }
-      }
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
     }
   }
 }

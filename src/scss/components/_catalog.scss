@@ -2,13 +2,13 @@
   padding: 97px 0 50px;
   .content {
     .cards {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
       flex-wrap: wrap;
       .card {
-        width: 400px;
+        max-width: 350px;
+        min-width: 350px;
         height: 250px;
         display: flex;
         align-items: flex-start;
@@ -34,12 +34,13 @@
           a {
             position: absolute;
             left: 40px;
-            bottom: 20px;
+            bottom: 0px;
             color: #454545;
             display: flex;
             align-items: center;
             gap: 5px;
             text-decoration: none;
+            z-index: 1;
           }
         }
         .img {
@@ -50,6 +51,9 @@
           }
         }
       }
+    }
+    .mySwiper {
+      display: none;
     }
     .title {
       display: flex;
@@ -66,20 +70,68 @@
         text-align: left;
         color: #454545;
       }
-      a {
-        text-decoration: none;
-        font-family: Manrope;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 21.86px;
-        text-align: left;
-        color: #454545;
-        border: 1px solid #454545;
-        border-radius: 50px;
-        padding: 14px 48px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    }
+  }
+  @media only screen and (max-width: 1111px) {
+    .content {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  @media only screen and (max-width: 757px) {
+    .content {
+      .cards {
+        display: none;
+      }
+      .mySwiper {
+        display: block;
+        .slide {
+          padding: 40px 0;
+          .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 32px;
+            width: 270px;
+            height: 250px;
+            padding: 20px 0;
+            position: relative;
+            .texts {
+              h3 {
+                text-align: start;
+              }
+              a {
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                color: #454545;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    .content {
+      .mySwiper {
+        .slide {
+          .card {
+            .img {
+              padding-bottom: 40px;
+              max-width: 100px;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
       }
     }
   }
