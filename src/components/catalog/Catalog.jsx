@@ -73,12 +73,12 @@ const Catalog = () => {
           <div className="cards">{card}</div>
           <Swiper
             slidesPerView={2}
-            spaceBetween={30}
             loop={true}
+            spaceBetween={30}
             pagination={{
               clickable: true,
             }}
-            navigation={false}
+            navigation={true}
             modules={[Pagination, Navigation]}
             className="mySwiper"
           >
