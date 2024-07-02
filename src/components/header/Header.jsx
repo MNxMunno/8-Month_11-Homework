@@ -37,17 +37,17 @@ function Header() {
                 <span>Bosh Sahifa</span>
               </NavLink>
 
-              <NavLink to={"/wishlist"} className="navbar__item">
+              <NavLink to={"/"} className="navbar__item">
                 <FaRegHeart />
 
                 <span>Избранное</span>
               </NavLink>
-              <NavLink to={"/wishlist"} className="navbar__item">
+              <NavLink to={"/"} className="navbar__item">
                 <TbAntennaBars5 />
 
                 <span>Корзина</span>
               </NavLink>
-              <NavLink to={"/cart"} className="navbar__item">
+              <NavLink to={"/"} className="navbar__item">
                 <FiShoppingCart />
                 <span>Cart</span>
               </NavLink>
