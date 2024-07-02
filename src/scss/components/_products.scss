@@ -116,4 +116,18 @@
       }
     }
   }
+  @media only screen and (max-width: 434px) {
+    .cards {
+      .card {
+        .img {
+          max-width: 120px;
+          height: 120px;
+          padding: 0;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }
