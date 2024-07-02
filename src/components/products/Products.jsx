@@ -3,7 +3,8 @@ import { useGetProductsQuery } from "../../context/api/ProductApi";
 import img from "../../assets/not_img.jpg";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
-import Img from "../img/Img";
+
+import Btn from "../../static/btn/Btn";
 
 const Products = () => {
   const { data } = useGetProductsQuery();
@@ -16,8 +17,8 @@ const Products = () => {
       <h3>{pro.title}</h3>
       <div className="card_bottom">
         <div className="prices">
-          <del>{(pro.price * 8873 * 1.1)?.brm()}₽</del>
-          <p>{(pro.price * 8873)?.brm()}₽</p>
+          <del>{(pro.price * 1.1)?.brm()} ₽</del>
+          <p>{(pro.price * 1).brm()} ₽</p>
         </div>
         <button>
           <MdOutlineShoppingCart />
@@ -32,7 +33,13 @@ const Products = () => {
   return (
     <section className="products">
       <div className="container">
-        <div className="cards">{card}</div>
+        <div className="content">
+          <div className="titles">
+            <h1>Популярные товары</h1>
+            <Btn text={"Все товары"} />
+          </div>
+          <div className="cards">{card}</div>
+        </div>
       </div>
     </section>
   );
